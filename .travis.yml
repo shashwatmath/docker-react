@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t shashwatmath/docker-react .
+
+script:
+  - docker run -e CI=true shashwatmath/docker-react npm run test -- --watchAll=false
