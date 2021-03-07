@@ -7,3 +7,6 @@ before_install:
 
 script:
   - docker run -e CI=true shashwatmath/docker-react npm run test -- --watchAll=false
+
+deploy:
+  provider: azure_web_apps
